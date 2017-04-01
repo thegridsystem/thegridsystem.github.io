@@ -36,7 +36,7 @@ firebase.auth().onAuthStateChanged((user) => {
 function changeLocation(){
 	var currenturl = window.location.href;
 	console.log(currenturl);
-	if (currenturl != "https://thegridsystem.github.io"){
-		window.location = "https://thegridsystem.github.io";
+	if (currenturl != "https://thegridsystem.github.io/?"){
+		window.location = "https://thegridsystem.github.io/?";
 	};
 }
