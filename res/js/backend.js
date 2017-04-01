@@ -14,7 +14,8 @@ firebase.initializeApp(config);
 function signin(){
 	var email = document.getElementById("InputEmail1").value;
 	var password = document.getElementById("InputPassword1").value;
-	firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+	firebase.auth().signInWithEmailAndPassword(email, password).then(function(){
+    window.location = "https://thegridsystem.github.io/?";}.catch(function(error) {
 	 // Handle Errors here.
 	var errorCode = error.code;
 	var errorMessage = error.message;
@@ -48,7 +49,7 @@ function googleSignin(){
 		// The signed-in user info.
 		var userId = result.user.uid;
 		var user = result.user;
-		
+		window.location = "https://thegridsystem.github.io/?";
 		// ...
 	}).catch(function(error) {
 		// Handle Errors here.
@@ -73,7 +74,6 @@ function logOut(){
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
     x=1;
-	window.location = "https://thegridsystem.github.io/?";
     console.log(user.uid);
 	var userId = user.uid;
     var username = user.displayName;
