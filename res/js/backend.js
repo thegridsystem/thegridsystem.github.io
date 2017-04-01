@@ -13,7 +13,7 @@ firebase.initializeApp(config);
 function signIn(){
 	var email = document.getElementById("InputEmail1").value;
 	var password = document.getElementById("InputPassword1").value;
-	firebase.auth().signInWithEmailAndPassword(email2, password2).catch(function(error) {
+	firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
 	 // Handle Errors here.
 	var errorCode = error.code;
 	var errorMessage = error.message;
