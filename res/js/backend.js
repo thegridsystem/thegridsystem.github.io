@@ -38,6 +38,7 @@ function onSuccess(googleUser) {
         'onfailure': onFailure
       });
     }
+var provider = new firebase.auth.GoogleAuthProvider();
 function googleSignin(){
     firebase.auth().signInWithPopup(provider).then(function(result) {
 		var user_provider = "google";
