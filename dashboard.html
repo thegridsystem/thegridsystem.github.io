@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Grid Dashboard
+    </title>
+    <!-- Material Design fonts -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css">
+
+    <!-- Bootstrap Material Design -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/css/bootstrap-material-design.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/css/ripples.min.css">
+
+    <link href="res/css/main.css" rel="stylesheet">
+</head>
+
+<body>
+    <img class="background" src="res/img/background.png" alt="background">
+    <div class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-th" aria-hidden="true"></span></a>
+            </div>
+            <div class="navbar-collapse collapse navbar-responsive-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Overview <span class="glyphicon glyphicon-picture" aria-hidden="true"></span></a></li>
+                    <li><a href="#">Report <span class="glyphicon glyphicon-stats" aria-hidden="true"></span></a></li>
+                </ul>
+                <form class="navbar-form navbar-left">
+                    <div class="form-group is-empty">
+                        <input type="text" class="form-control col-sm-8" placeholder="Search">
+                    </div>
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" data-target="#" class="dropdown-toggle" data-toggle="dropdown">Admin
+                        <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Calendar</a></li>
+                            <li><a href="#">Manage</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Log Out</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div data-masonry='{ "itemSelector":".col-xs-12", "fitWidth": true }'>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Energy Generation</h3>
+                </div>
+                <div class="panel-body">
+                    <canvas id="energyGen" width="100%" height="100%"></canvas>
+                    Electrical Energy is generated via green sources all throughout the city
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                  <h3 class="panel-title">Welcome!</h3>
+              </div>
+              <div class="panel-body">
+                  Welcome to the dynamic dashboard linked directly to the Grid&trade;. Here you can observe power generation
+                  sources from the city, manage output and view the current cost of energy. Grid&trade; also controls traffic
+              </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Live Energy Generation</h3>
+                </div>
+                <div class="panel-body">
+                    <canvas id="energyGenLive" width="100%" height="100%"></canvas>
+                    Electrical Energy is generated via green sources all throughout the city
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    Basic panel example
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    Basic panel example
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/js/ripples.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/js/material.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.1.1/masonry.pkgd.min.js"></script>
+    <script src="res/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+/*dashboard*/
+
+.panel {
+  margin: 20px;
+}
+
+.banner {
+  width: 100%;
+}
+
+/*login*/
+
+.login-form {
+     position: absolute;
+     top: 200px;
+     left: 0;
+     bottom: 0;
+     right: 0;
+     margin: auto;
+}
