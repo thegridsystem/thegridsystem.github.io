@@ -46,7 +46,7 @@ function googleSignin(){
 		var token = result.credential.accessToken;
 		// The signed-in user info.
 		var userId = result.user.uid;
-		var user = result.user.displayName;
+		var user = result.user;
 		
 		// ...
 	}).catch(function(error) {
@@ -71,20 +71,20 @@ function logOut(){
 }
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
-	changeLocation();
+	window.location = "https://thegridsystem.github.io/?";
     console.log(user.uid);
 	var userId = user.uid;
-	var user = user.email;
     var username = user.displayName;
 	console.log(user);
     document.getElementById("displayUsername").innerHTML = username;
   }
 });
 
-function changeLocation(){
-	var currenturl = window.location.href;
-	console.log(currenturl);
-	if (currenturl != "https://thegridsystem.github.io/?"){
-		window.location = "https://thegridsystem.github.io/?";
-	};
+}
+function managePage(){
+    if (user) {
+        window.location = "https://thegridsystem.github.io/dashboard.html";
+    } else {
+        window.location = "https://thegridsystem.github.io/login.html";
+}
 }
