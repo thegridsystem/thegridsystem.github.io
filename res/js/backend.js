@@ -80,7 +80,6 @@ firebase.auth().onAuthStateChanged((user) => {
   }
 });
 
-}
 function managePage(){
     if (user) {
         window.location = "https://thegridsystem.github.io/dashboard.html";
