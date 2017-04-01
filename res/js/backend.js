@@ -38,7 +38,7 @@ function onSuccess(googleUser) {
         'onfailure': onFailure
       });
     }
-function logout(){
+function logOut(){
     	firebase.auth().signOut().then(function() {
 		console.log('Signed Out');
 		window.location.reload();
