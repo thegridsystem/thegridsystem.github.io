@@ -9,6 +9,20 @@ var config = {
 };
 firebase.initializeApp(config);
 
+//Sign-in Function
+function signin(){
+    console.log("test");
+	var email = document.getElementById("InputEmail1").value;
+	var password = document.getElementById("InputPassword1").value;
+    console.log(email);
+    console.log(password);
+	firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+	 // Handle Errors here.
+	var errorCode = error.code;
+	var errorMessage = error.message;
+	//TO-COME: ERROR BOX SHOWING POTENTIAL LOG-IN ERRORS
+});
+}
 
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
