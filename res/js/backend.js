@@ -21,7 +21,31 @@ function signin(){
 	//TO-COME: ERROR BOX SHOWING POTENTIAL LOG-IN ERRORS
 });
 }
-
+function onSuccess(googleUser) {
+      console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+    }
+    function onFailure(error) {
+      console.log(error);
+    }
+    function renderButton() {
+      gapi.signin2.render('my-signin2', {
+        'scope': 'profile email',
+        'width': 240,
+        'height': 50,
+        'longtitle': true,
+        'theme': 'dark',
+        'onsuccess': onSuccess,
+        'onfailure': onFailure
+      });
+    }
+function logout(){
+    	firebase.auth().signOut().then(function() {
+		console.log('Signed Out');
+		window.location.reload();
+	}, function(error) {
+		console.error('Sign Out Error', error);
+	});
+}
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
 	changeLocation();
