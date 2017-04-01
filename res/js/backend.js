@@ -20,6 +20,7 @@ function signin(){
 	 // Handle Errors here.
 	var errorCode = error.code;
 	var errorMessage = error.message;
+    console.log(errorMessage);
 	//TO-COME: ERROR BOX SHOWING POTENTIAL LOG-IN ERRORS
 });
 }
