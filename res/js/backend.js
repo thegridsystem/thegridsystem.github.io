@@ -1,3 +1,4 @@
+x=0;
 // Initialize Firebase
 var config = {
     apiKey: "AIzaSyDqzcIJEDrb8E4yJubktyfyIh2YFZFJL54",
@@ -71,6 +72,7 @@ function logOut(){
 }
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
+    x=1;
 	window.location = "https://thegridsystem.github.io/?";
     console.log(user.uid);
 	var userId = user.uid;
@@ -81,7 +83,7 @@ firebase.auth().onAuthStateChanged((user) => {
 });
 
 function managePage(){
-    if (user) {
+    if (x == 1) {
         window.location = "https://thegridsystem.github.io/dashboard.html";
     } else {
         window.location = "https://thegridsystem.github.io/login.html";
