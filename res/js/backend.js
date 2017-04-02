@@ -101,4 +101,4 @@ function managePage() {
 	}
 };
 
-
+window.onresize = function(){ location.reload(); } //refreshes the page on resize
