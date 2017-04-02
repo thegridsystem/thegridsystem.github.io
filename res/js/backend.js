@@ -58,7 +58,7 @@ function googleSignin() {
         var user = result.user;
         var username3 = result.user.displayName;
         firebase.database().ref('users/' + userId).set({
-        username: username2,
+        username: username3,
   	    });
 	    }).catch(function(error) {
         window.location = "https://gridsystem.azurewebsites.net/";
