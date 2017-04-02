@@ -12,8 +12,8 @@ firebase.initializeApp(config);
 
 //Sign-in Function
 function signin(){
-	var email = document.getElementById("InputEmail1").value;
-	var password = document.getElementById("InputPassword1").value;
+	var email = document.getElementById("signinEmail").value;
+	var password = document.getElementById("signinPassword").value;
 	firebase.auth().signInWithEmailAndPassword(email, password).then(function(){
     window.location = "https://gridsystem.azurewebsites.net/";}).catch(function(error) {
 	 // Handle Errors here.
