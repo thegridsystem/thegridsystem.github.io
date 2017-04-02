@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://gridsystem.azurewebsites.net">
-    <img src="https://gridsystem.azurewebsites.net/res/img/logotext.png" width=200 height=400>
+    <img src="https://gridsystem.azurewebsites.net/res/img/logotext.png" width=400 height=200>
   </a>
 
   <h3 align="center">The Grid</h3>
