@@ -23,6 +23,10 @@ function signin(){
 	//TO-COME: ERROR BOX SHOWING POTENTIAL LOG-IN ERRORS
 })
 }
+//Sign-Up Function
+function signup(){
+	
+}
 var provider = new firebase.auth.GoogleAuthProvider();
 function googleSignin(){
     firebase.auth().signInWithPopup(provider).then(function(result) {
