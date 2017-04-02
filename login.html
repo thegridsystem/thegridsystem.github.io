@@ -8,48 +8,65 @@
     <!-- Material Design fonts -->
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" type="text/css" href="res/css/bootstrap-social.css">
-    <script src="https://use.fontawesome.com/cd351f2c38.js"></script>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css">
-    
 
     <!-- Bootstrap Material Design -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/css/bootstrap-material-design.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/css/ripples.min.css">
 
-    <!-- Firebase -->
-    <script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
-    <script src="res/js/backend.js"></script>
-
-    <link href="res/css/main.css" rel="stylesheet">
+    <link href="res/css/login.css" rel="stylesheet">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-  <img class="banner" src="res/img/banner.png" alt="banner">
-  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 login-form">
-      <div class="panel panel-default">
-          <div class="panel-heading">
-              <h3 class="panel-title">Energy Generation</h3>
-          </div>
-          <div class="panel-body">
-            <div>
-            <div class="form-group">
-              <label for="exampleInputEmail1">Email address</label>
-              <input type="email" class="form-control" id="InputEmail1" placeholder="Email">
+    <div class="col-md-4 login-form">
+        <div class="bs-component">
+            <ul class="nav nav-tabs" style="margin-bottom: 15px;">
+                <li class="active"><a href="#login" data-toggle="tab" aria-expanded="true">Log In<div class="ripple-container"></div></a></li>
+                <li class=""><a href="#signup" data-toggle="tab" aria-expanded="false">Sign Up<div class="ripple-container"></div></a></li>
+            </ul>
+            <div id="myTabContent" class="tab-content">
+                <div class="tab-pane fade active in" id="login">
+                    <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher
+                        synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+                </div>
+                <div class="tab-pane fade" id="signup">
+                    <div class="well bs-component">
+                        <form class="form-horizontal" _lpchecked="1">
+                            <fieldset>
+                                <legend>Legend</legend>
+                                <div class="form-group is-empty">
+                                    <label for="inputEmail" class="col-md-2 control-label">Email</label>
+
+                                    <div class="col-md-10">
+                                        <input type="email" class="form-control" id="inputEmail" placeholder="Email" style="cursor: auto;">
+                                    </div>
+                                </div>
+                                <div class="form-group is-empty">
+                                    <label for="inputPassword" class="col-md-2 control-label">Password</label>
+
+                                    <div class="col-md-10">
+                                        <input type="password" class="form-control" id="inputPassword" placeholder="Password" style="cursor: auto;">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-10 col-md-offset-2">
+                                        <button type="button" class="btn btn-default">Cancel</button>
+                                        <button type="submit" class="btn btn-primary">Submit<div class="ripple-container"></div></button>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                        <div id="source-button" class="btn btn-primary btn-xs" style="display: none;">&lt; &gt;</div>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-              <label for="exampleInputPassword1">Password</label>
-              <input type="password" class="form-control" id="InputPassword1" placeholder="Password">
-            </div>
-            <button onclick="signin()" type="submit" class="btn btn-primary">Submit</button>
-            <a href="javascript:googleSignin();" class="btn btn-social-icon btn-google">
-            <span class="fa fa-google"></span>
-             </a>
-          </div>
-      </div>
-  </div>
+            <div id="source-button" class="btn btn-primary btn-xs" style="display: none;">&lt; &gt;</div>
+        </div>
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/js/ripples.min.js"></script>
@@ -57,6 +74,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.1.1/masonry.pkgd.min.js"></script>
     <script src="res/js/main.js"></script>
-    <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
 </body>
+
 </html>

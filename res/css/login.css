@@ -1,0 +1,18 @@
+/*login*/
+
+.login-form {
+     position: absolute;
+     top: 200px;
+     left: 0;
+     bottom: 0;
+     right: 0;
+     margin: auto;
+}
+
+html { 
+background: url(../img/background.png) no-repeat center center fixed; 
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+}

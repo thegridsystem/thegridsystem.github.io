@@ -16,15 +16,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/css/bootstrap-material-design.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/css/ripples.min.css">
 
-    <!-- Firebase -->
-    <script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
-    <script src="res/js/backend.js"></script>
-
     <link href="res/css/main.css" rel="stylesheet">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-    <img class="background" src="res/img/banner.png" alt="background">
+    <img class="banner" src="res/img/banner.png" alt="background">
     <div class="navbar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -47,13 +45,13 @@
                 </form>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
-                        <a href="#" data-target="#" class="dropdown-toggle" data-toggle="dropdown" id="displayUsername">Guest
+                        <a href="#" data-target="#" class="dropdown-toggle" data-toggle="dropdown">Admin
                         <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="#">Calendar</a></li>
-                            <li><a href="javascript:managePage();">Manage</a></li>
+                            <li><a href="#">Manage</a></li>
                             <li class="divider"></li>
-                            <li><a href="javascript:logOut();">Log Out</a></li>
+                            <li><a href="#">Log Out</a></li>
                         </ul>
                     </li>
                 </ul>
