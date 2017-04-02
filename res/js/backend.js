@@ -26,7 +26,6 @@ function signin() {
     })
 }
 //Sign-Up Function
-<<<<<<< HEAD
 function signup(){
 	var email2 = document.getElementById("signupEmail").value;
 	var password2 = document.getElementById("signupPassword").value;
@@ -43,7 +42,6 @@ function signup(){
 	console.log(errorCode + errorMessage);
 	// ...
 	});
-=======
 function signup() {
     var email2 = document.getElementById("signupEmail").value;
     var password2 = document.getElementById("signupPassword").value;
@@ -56,7 +54,6 @@ function signup() {
         console.log(errorCode + errorMessage);
         // ...
     });
->>>>>>> cf66e63122f5d8ddc17580ff13fb333f4a29456c
 }
 var provider = new firebase.auth.GoogleAuthProvider();
 
@@ -91,7 +88,6 @@ function logOut() {
     });
 }
 firebase.auth().onAuthStateChanged((user) => {
-<<<<<<< HEAD
   if (user) {
     x=1;
     console.log(user.uid);
@@ -104,7 +100,6 @@ firebase.auth().onAuthStateChanged((user) => {
 	});
     document.getElementById("displayUsername").innerHTML = username + "	▼";
   }
-=======
     if (user) {
         x = 1;
         console.log(user.uid);
@@ -113,7 +108,6 @@ firebase.auth().onAuthStateChanged((user) => {
         console.log(user);
         document.getElementById("displayUsername").innerHTML = username + "	▼";
     }
->>>>>>> cf66e63122f5d8ddc17580ff13fb333f4a29456c
 });
 
 function managePage() {
