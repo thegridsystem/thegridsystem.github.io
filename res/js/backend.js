@@ -1,4 +1,4 @@
-x=0;
+x = 0;
 // Initialize Firebase
 var config = {
     apiKey: "AIzaSyDqzcIJEDrb8E4yJubktyfyIh2YFZFJL54",
@@ -11,75 +11,80 @@ var config = {
 firebase.initializeApp(config);
 
 //Sign-in Function
-function signin(){
-	var email = document.getElementById("signinEmail").value;
-	var password = document.getElementById("signinPassword").value;
-	firebase.auth().signInWithEmailAndPassword(email, password).then(function(){
-    window.location = "https://gridsystem.azurewebsites.net/";}).catch(function(error) {
-	 // Handle Errors here.
-	var errorCode = error.code;
-	var errorMessage = error.message;
-    console.log(errorCode + errorMessage);
-	//TO-COME: ERROR BOX SHOWING POTENTIAL LOG-IN ERRORS
-})
+function signin() {
+    var email = document.getElementById("signinEmail").value;
+    var password = document.getElementById("signinPassword").value;
+    firebase.auth().signInWithEmailAndPassword(email, password).then(function() {
+        window.location = "https://gridsystem.azurewebsites.net/";
+    }).catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        console.log(errorCode + errorMessage);
+        //TO-COME: ERROR BOX SHOWING POTENTIAL LOG-IN ERRORS
+    })
 }
 //Sign-Up Function
-function signup(){
-	var email2 = document.getElementById("signupEmail").value;
-	var password2 = document.getElementById("signupPassword").value;
-	firebase.auth().createUserWithEmailAndPassword(email2, password2).then(function(){
-    window.location = "https://gridsystem.azurewebsites.net/";}).catch(function(error) {
-	// Handle Errors here.
-	var errorCode = error.code;
-	var errorMessage = error.message;
-	console.log(errorCode + errorMessage);
-	// ...
-	});
+function signup() {
+    var email2 = document.getElementById("signupEmail").value;
+    var password2 = document.getElementById("signupPassword").value;
+    firebase.auth().createUserWithEmailAndPassword(email2, password2).then(function() {
+        window.location = "https://gridsystem.azurewebsites.net/";
+    }).catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        console.log(errorCode + errorMessage);
+        // ...
+    });
 }
 var provider = new firebase.auth.GoogleAuthProvider();
-function googleSignin(){
+
+function googleSignin() {
     firebase.auth().signInWithPopup(provider).then(function(result) {
-		var user_provider = "google";
-		// This gives you a Google Access Token. You can use it to access the Google API.
-		var token = result.credential.accessToken;
-		// The signed-in user info.
-		var userId = result.user.uid;
-		var user = result.user;
-		window.location = "https://gridsystem.azurewebsites.net/";
-		// ...
-	}).catch(function(error) {
-		// Handle Errors here.
-		var errorCode = error.code;
-		var errorMessage = error.message;
-		// The email of the user's account used.
-		var email = error.email;
-		// The firebase.auth.AuthCredential type that was used.
-		var credential = error.credential;
-		// ...
-	});
+        var user_provider = "google";
+        // This gives you a Google Access Token. You can use it to access the Google API.
+        var token = result.credential.accessToken;
+        // The signed-in user info.
+        var userId = result.user.uid;
+        var user = result.user;
+        window.location = "https://gridsystem.azurewebsites.net/";
+        // ...
+    }).catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // The email of the user's account used.
+        var email = error.email;
+        // The firebase.auth.AuthCredential type that was used.
+        var credential = error.credential;
+        // ...
+    });
 }
-function logOut(){
-    	firebase.auth().signOut().then(function() {
-		console.log('Signed Out');
-		window.location.reload();
-	}, function(error) {
-		console.error('Sign Out Error', error);
-	});
+
+function logOut() {
+    firebase.auth().signOut().then(function() {
+        console.log('Signed Out');
+        window.location.reload();
+    }, function(error) {
+        console.error('Sign Out Error', error);
+    });
 }
 firebase.auth().onAuthStateChanged((user) => {
-  if (user) {
-    x=1;
-    console.log(user.uid);
-	var userId = user.uid;
-    var username = user.displayName;
-	console.log(user);
-    document.getElementById("displayUsername").innerHTML = username + "	▼";
-  }
+    if (user) {
+        x = 1;
+        console.log(user.uid);
+        var userId = user.uid;
+        var username = user.displayName;
+        console.log(user);
+        document.getElementById("displayUsername").innerHTML = username + "	▼";
+    }
 });
-function managePage(){
+
+function managePage() {
     if (x == 1) {
         window.location = "https://gridsystem.azurewebsites.net/manage.html";
     } else {
         window.location = "https://gridsystem.azurewebsites.net/login.html";
-}
+    }
 }
