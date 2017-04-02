@@ -9,6 +9,7 @@ var config = {
     messagingSenderId: "571229097625"
 };
 firebase.initializeApp(config);
+var database = firebase.database();
 
 //Sign-in Function
 function signin(){
@@ -27,8 +28,13 @@ function signin(){
 function signup(){
 	var email2 = document.getElementById("signupEmail").value;
 	var password2 = document.getElementById("signupPassword").value;
+	var username2 = document.getElementById("signupName").value;
 	firebase.auth().createUserWithEmailAndPassword(email2, password2).then(function(){
-    window.location = "https://gridsystem.azurewebsites.net/";}).catch(function(error) {
+    window.location = "https://gridsystem.azurewebsites.net/";
+	firebase.database().ref('users/' + userId).set({
+    username: username2,
+  	});
+	}).catch(function(error) {
 	// Handle Errors here.
 	var errorCode = error.code;
 	var errorMessage = error.message;
@@ -71,8 +77,12 @@ firebase.auth().onAuthStateChanged((user) => {
     x=1;
     console.log(user.uid);
 	var userId = user.uid;
-    var username = user.displayName;
 	console.log(user);
+	var userId = firebase.auth().currentUser.uid;
+	return firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
+  	var username = snapshot.val().username;
+ 	// ...
+	});
     document.getElementById("displayUsername").innerHTML = username + "	▼";
   }
 });
