@@ -30,8 +30,8 @@ function signup(){
 	var email2 = document.getElementById("signupEmail").value;
 	var password2 = document.getElementById("signupPassword").value;
 	var username2 = document.getElementById("signupName").value;
-	firebase.auth().createUserWithEmailAndPassword(email2, password2).then(function(result){
-	console.log(result);
+	firebase.auth().createUserWithEmailAndPassword(email2, password2).then(function(user){
+	console.log(user);
     window.location = "https://gridsystem.azurewebsites.net/";
 	var userId = user.uid;
 	var username2 = document.getElementById("signupName").value;
