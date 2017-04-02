@@ -25,8 +25,8 @@ function signin(){
 }
 //Sign-Up Function
 function signup(){
-	var email2 = document.getElementById("InputEmail2").value;
-	var password2 = document.getElementById("InputPassword2").value;
+	var email2 = document.getElementById("InputEmail").value;
+	var password2 = document.getElementById("InputPassword").value;
 	firebase.auth().createUserWithEmailAndPassword(email2, password2).then(function(){
     window.location = "https://gridsystem.azurewebsites.net/";}).catch(function(error) {
 	// Handle Errors here.
