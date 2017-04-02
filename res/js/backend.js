@@ -25,7 +25,15 @@ function signin(){
 }
 //Sign-Up Function
 function signup(){
-	
+	var email2 = document.getElementById("InputEmail2").value;
+	var password2 = document.getElementById("InputPassword2").value;
+	firebase.auth().createUserWithEmailAndPassword(email2, password2).then(function(){
+    window.location = "https://gridsystem.azurewebsites.net/";}).catch(function(error) {
+	// Handle Errors here.
+	var errorCode = error.code;
+	var errorMessage = error.message;
+	// ...
+	});
 }
 var provider = new firebase.auth.GoogleAuthProvider();
 function googleSignin(){
