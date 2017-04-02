@@ -23,23 +23,6 @@ function signin(){
 	//TO-COME: ERROR BOX SHOWING POTENTIAL LOG-IN ERRORS
 })
 }
-function onSuccess(googleUser) {
-      console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
-    }
-    function onFailure(error) {
-      console.log(error);
-    }
-    function renderButton() {
-      gapi.signin2.render('my-signin2', {
-        'scope': 'profile email',
-        'width': 240,
-        'height': 50,
-        'longtitle': true,
-        'theme': 'dark',
-        'onsuccess': onSuccess,
-        'onfailure': onFailure
-      });
-    }
 var provider = new firebase.auth.GoogleAuthProvider();
 function googleSignin(){
     firebase.auth().signInWithPopup(provider).then(function(result) {
@@ -60,7 +43,6 @@ function googleSignin(){
 		// The firebase.auth.AuthCredential type that was used.
 		var credential = error.credential;
 		// ...
-		
 	});
 }
 function logOut(){
@@ -78,7 +60,7 @@ firebase.auth().onAuthStateChanged((user) => {
 	var userId = user.uid;
     var username = user.displayName;
 	console.log(user);
-    document.getElementById("displayUsername").innerHTML = username;
+    document.getElementById("displayUsername").innerHTML = username + "	▼";
   }
 });
 
