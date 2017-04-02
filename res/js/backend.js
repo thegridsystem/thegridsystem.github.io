@@ -60,8 +60,8 @@ function googleSignin() {
         firebase.database().ref('users/' + userId).set({
         username: username3,
   	    });
-	    }).catch(function(error) {
         window.location = "https://gridsystem.azurewebsites.net/";
+	    }).catch(function(error) {
         // ...
     }).catch(function(error) {
         // Handle Errors here.
