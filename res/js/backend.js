@@ -88,7 +88,7 @@ firebase.auth().onAuthStateChanged((user) => {
 	return firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
   	var username = snapshot.val().username;
  	// ...
-    document.getElementById("displayUsername").innerHTML = username + "	▼";
+    document.getElementById("displayUsername").innerHTML = username + "	&#x25BC;";
 	});
   };
 });
