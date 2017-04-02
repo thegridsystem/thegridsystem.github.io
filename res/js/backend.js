@@ -63,7 +63,6 @@ firebase.auth().onAuthStateChanged((user) => {
     document.getElementById("displayUsername").innerHTML = username + "	▼";
   }
 });
-
 function managePage(){
     if (x == 1) {
         window.location = "https://thegridsystem.github.io/dashboard.html";
