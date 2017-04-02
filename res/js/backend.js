@@ -23,7 +23,7 @@ function signin() {
         var errorMessage = error.message;
         console.log(errorCode + errorMessage);
         //TO-COME: ERROR BOX SHOWING POTENTIAL LOG-IN ERRORS
-    })
+    });
 }
 //Sign-Up Function
 function signup(){
@@ -41,7 +41,8 @@ function signup(){
 	var errorMessage = error.message;
 	console.log(errorCode + errorMessage);
 	// ...
-	});
+});
+}
 function signup() {
     var email2 = document.getElementById("signupEmail").value;
     var password2 = document.getElementById("signupPassword").value;
@@ -107,12 +108,14 @@ firebase.auth().onAuthStateChanged((user) => {
         console.log(user);
         document.getElementById("displayUsername").innerHTML = username + "	▼";
     }
+  };
 
 function managePage() {
     if (x == 1) {
         window.location = "https://gridsystem.azurewebsites.net/manage.html";
     } else {
         window.location = "https://gridsystem.azurewebsites.net/login.html";
-    }
+	}
 };
+
 
