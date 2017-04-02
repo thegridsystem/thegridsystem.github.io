@@ -16,6 +16,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/css/bootstrap-material-design.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/css/ripples.min.css">
 
+    <!-- Firebase -->
+    <script src="res/js/backend.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
+
     <link href="res/css/login.css" rel="stylesheet">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -55,7 +59,7 @@
                                 <div class="form-group">
                                     <div class="col-md-10 col-md-offset-2">
                                         <button type="button" class="btn btn-default">Cancel</button>
-                                        <button type="submit" class="btn btn-primary">Submit<div class="ripple-container"></div></button>
+                                        <button onClick="signin()" type="submit" class="btn btn-primary">Submit<div class="ripple-container"></div></button>
                                     </div>
                                 </div>
                             </fieldset>
