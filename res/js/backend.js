@@ -34,6 +34,7 @@ function signup(){
     window.location = "https://gridsystem.azurewebsites.net/";
 	firebase.database().ref('users/' + userId).set({
     username: username2,
+	test: test,
   	});
 	}).catch(function(error) {
 	// Handle Errors here.
@@ -42,19 +43,6 @@ function signup(){
 	console.log(errorCode + errorMessage);
 	// ...
 });
-}
-function signup() {
-    var email2 = document.getElementById("signupEmail").value;
-    var password2 = document.getElementById("signupPassword").value;
-    firebase.auth().createUserWithEmailAndPassword(email2, password2).then(function() {
-        window.location = "https://gridsystem.azurewebsites.net/";
-    }).catch(function(error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        console.log(errorCode + errorMessage);
-        // ...
-    });
 }
 var provider = new firebase.auth.GoogleAuthProvider();
 
