@@ -1,14 +1,14 @@
 <p align="center">
-  <a href="https://v4-alpha.getbootstrap.com">
-    <img src="http://v4-alpha.getbootstrap.com/assets/brand/bootstrap-solid.svg" width=72 height=72>
+  <a href="https://gridsystem.azurewebsites.net">
+    <img src="https://gridsystem.azurewebsites.net/res/img/logotext.png" width=72 height=72>
   </a>
 
-  <h3 align="center">Bootstrap</h3>
+  <h3 align="center">The Grid</h3>
 
   <p align="center">
-    Sleek, intuitive, and powerful front-end framework for faster and easier web development.
+    Intuitive, fast, and powerful service to monitor the modern city.
     <br>
-    <a href="https://v4-alpha.getbootstrap.com"><strong>Visit Bootstrap &raquo;</strong></a>
+    <a href="https://gridsystem.azurewebsites.net"><strong>Visit Our Demo &raquo;</strong></a>
   </p>
 </p>
 
