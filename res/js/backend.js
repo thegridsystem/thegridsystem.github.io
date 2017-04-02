@@ -37,7 +37,6 @@ function signup(){
 	var username2 = document.getElementById("signupName").value;
 	firebase.database().ref('users/' + userId).set({
     username: username2,
-	test: test,
   	});
 	}).catch(function(error) {
 	// Handle Errors here.
