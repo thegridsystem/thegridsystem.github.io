@@ -22,7 +22,8 @@ function signin() {
         var errorCode = error.code;
         var errorMessage = error.message;
         console.log(errorCode + errorMessage);
-        //TO-COME: ERROR BOX SHOWING POTENTIAL LOG-IN ERRORS
+        document.getElementById("errorlogin").style.visibility = "visible";
+        document.getElementById("errormessage").innerHTML = "Error " + errorMessage;
     });
 }
 //Sign-Up Function
@@ -43,8 +44,13 @@ function signup(){
 	var errorCode = error.code;
 	var errorMessage = error.message;
 	console.log(errorCode + errorMessage);
+    document.getElementById("errorlogin2").style.visibility = "visible";
+    document.getElementById("errormessage2").innerHTML = "Error " + errorMessage;
 	// ...
 });
+}
+function back(){
+    window.location = "https://gridsystem.azurewebsites.net/";
 }
 var provider = new firebase.auth.GoogleAuthProvider();
 
@@ -72,6 +78,8 @@ function googleSignin() {
         // The firebase.auth.AuthCredential type that was used.
         var credential = error.credential;
         // ...
+        document.getElementById("errorlogin").style.visibility = "visible";
+        document.getElementById("errormessage").innerHTML = "Error " + errorMessage;
     });
 }
 
