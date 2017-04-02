@@ -1,5 +1,10 @@
 <script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
-<script src="res/js/backend.js"></script>
 <script>
-    managePage()
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    x=1;
+    }
+});
 </script>
+<script src="res/js/backend.js"></script>
+<script>managePage()</script>
