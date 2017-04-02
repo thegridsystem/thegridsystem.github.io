@@ -23,6 +23,18 @@ function signin(){
 	//TO-COME: ERROR BOX SHOWING POTENTIAL LOG-IN ERRORS
 })
 }
+//Sign-Up Function
+function signup(){
+	var email2 = document.getElementById("signupEmail").value;
+	var password2 = document.getElementById("signupPassword").value;
+	firebase.auth().createUserWithEmailAndPassword(email2, password2).then(function(){
+    window.location = "https://gridsystem.azurewebsites.net/";}).catch(function(error) {
+	// Handle Errors here.
+	var errorCode = error.code;
+	var errorMessage = error.message;
+	// ...
+	});
+}
 var provider = new firebase.auth.GoogleAuthProvider();
 function googleSignin(){
     firebase.auth().signInWithPopup(provider).then(function(result) {
