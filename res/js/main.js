@@ -18,7 +18,7 @@ var energyGen = new Chart(ctx, {
     },
     options: {
         legend: {
-          display: false
+            display: false
         },
         scales: {
             yAxes: [{
@@ -42,19 +42,19 @@ var energyGenLive = new Chart(ctx, {
                 'rgba(57, 73, 171, 1)'
             ],
             backgroundColor: [
-              'rgba(0, 0, 0, 0.0)'
+                'rgba(0, 0, 0, 0.0)'
             ]
         }]
     },
     options: {
         legend: {
-          display: false
+            display: false
         },
         scales: {
             yAxes: [{
                 scaleLabel: {
-                  display: true,
-                  labelString: 'Gigawatt output'
+                    display: true,
+                    labelString: 'Gigawatt output'
                 },
                 ticks: {
                     min: 5,
@@ -63,15 +63,15 @@ var energyGenLive = new Chart(ctx, {
             }],
             xAxes: [{
                 scaleLabel: {
-                  display: true,
-                  labelString: 'minutes'
+                    display: true,
+                    labelString: 'minutes'
                 }
             }]
         }
     }
 });
 
-setInterval(function(){
+setInterval(function() {
     energyGenLive.data.datasets[0].data[0] = energyGenLive.data.datasets[0].data[1];
     energyGenLive.data.datasets[0].data[1] = energyGenLive.data.datasets[0].data[2];
     energyGenLive.data.datasets[0].data[2] = energyGenLive.data.datasets[0].data[3];
@@ -82,9 +82,13 @@ setInterval(function(){
 }, 60000);
 
 $('.grid').masonry({
-  // set itemSelector so .grid-sizer is not used in layout
-  itemSelector: '.grid-item',
-  // use element for option
-  columnWidth: '.grid-sizer',
-  percentPosition: true
+    // set itemSelector so .grid-sizer is not used in layout
+    itemSelector: '.grid-item',
+    // use element for option
+    columnWidth: '.grid-sizer',
+    percentPosition: true
 })
+
+$(function() {
+    $.material.init();
+});
