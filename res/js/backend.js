@@ -25,18 +25,22 @@ function signin() {
         //TO-COME: ERROR BOX SHOWING POTENTIAL LOG-IN ERRORS
     });
 }
+function usernamePass(result){
+	var userId = result.user.uid;
+	var username2 = document.getElementById("signupName").value;
+	firebase.database().ref('users/' + userId).set({
+    username: username2,
+	test: test,
+  	});
+}
 //Sign-Up Function
 function signup(){
 	var email2 = document.getElementById("signupEmail").value;
 	var password2 = document.getElementById("signupPassword").value;
 	var username2 = document.getElementById("signupName").value;
-	firebase.auth().createUserWithEmailAndPassword(email2, password2).then(function(){
-	var userId = userId.uid;
+	firebase.auth().createUserWithEmailAndPassword(email2, password2).then(function(result){
     window.location = "https://gridsystem.azurewebsites.net/";
-	firebase.database().ref('users/' + userId).set({
-    username: username2,
-	test: test,
-  	});
+	usernamePass(result);
 	}).catch(function(error) {
 	// Handle Errors here.
 	var errorCode = error.code;
