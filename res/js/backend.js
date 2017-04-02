@@ -65,7 +65,7 @@ firebase.auth().onAuthStateChanged((user) => {
 });
 function managePage(){
     if (x == 1) {
-        window.location = "https://thegridsystem.github.io/dashboard.html";
+        window.location = "https://thegridsystem.github.io/manage.html";
     } else {
         window.location = "https://thegridsystem.github.io/login.html";
 }
