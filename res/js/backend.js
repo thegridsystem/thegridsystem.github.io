@@ -97,9 +97,8 @@ firebase.auth().onAuthStateChanged((user) => {
 	return firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
   	var username = snapshot.val().username;
  	// ...
-	});
     document.getElementById("displayUsername").innerHTML = username + "	▼";
-  }
+	});
     if (user) {
         x = 1;
         console.log(user.uid);
@@ -108,7 +107,6 @@ firebase.auth().onAuthStateChanged((user) => {
         console.log(user);
         document.getElementById("displayUsername").innerHTML = username + "	▼";
     }
-});
 
 function managePage() {
     if (x == 1) {
@@ -116,4 +114,5 @@ function managePage() {
     } else {
         window.location = "https://gridsystem.azurewebsites.net/login.html";
     }
-}
+};
+
