@@ -100,15 +100,8 @@ firebase.auth().onAuthStateChanged((user) => {
  	// ...
     document.getElementById("displayUsername").innerHTML = username + "	▼";
 	});
-    if (user) {
-        x = 1;
-        console.log(user.uid);
-        var userId = user.uid;
-        var username = user.displayName;
-        console.log(user);
-        document.getElementById("displayUsername").innerHTML = username + "	▼";
-    }
   };
+});
 
 function managePage() {
     if (x == 1) {
