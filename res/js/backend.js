@@ -15,7 +15,7 @@ function signin(){
 	var email = document.getElementById("InputEmail1").value;
 	var password = document.getElementById("InputPassword1").value;
 	firebase.auth().signInWithEmailAndPassword(email, password).then(function(){
-    window.location = "https://thegridsystem.github.io/?";}).catch(function(error) {
+    window.location = "https://thegridsystem.github.io/dashboard.html";}).catch(function(error) {
 	 // Handle Errors here.
 	var errorCode = error.code;
 	var errorMessage = error.message;
@@ -32,7 +32,7 @@ function googleSignin(){
 		// The signed-in user info.
 		var userId = result.user.uid;
 		var user = result.user;
-		window.location = "https://thegridsystem.github.io/?";
+		window.location = "https://thegridsystem.github.io/dashboard.html";
 		// ...
 	}).catch(function(error) {
 		// Handle Errors here.
