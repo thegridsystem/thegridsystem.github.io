@@ -129,7 +129,7 @@ firebase.auth().onAuthStateChanged((user) => {
     
 	});
   }else{
-      window.location("https://gridsystem.azurewebsites.net/login.html")
+      window.location("https://gridsystem.azurewebsites.net/login.html");
   }
 
 });
@@ -146,10 +146,4 @@ window.onresize = function(){ location.reload(); } //refreshes the page on resiz
 
 function goback(){
     window.location = "https://gridsystem.azurewebsites.net/";
-}
-var user = firebase.auth().currentUser;
-if (user) {
-  // User is signed in.
-} else {
-  window.location = "https://gridsystem.azurewebsites.net/login.html";
 }
