@@ -128,7 +128,10 @@ firebase.auth().onAuthStateChanged((user) => {
     document.getElementById("displayUsername2").innerHTML = username;
     
 	});
-  };
+  }else{
+      window.location("https://gridsystem.azurewebsites.net/login.html")
+  }
+
 });
 
 function managePage() {
@@ -148,5 +151,5 @@ var user = firebase.auth().currentUser;
 if (user) {
   // User is signed in.
 } else {
-  window.location = "https://gridsystem.azurewebsites.net/";
+  window.location = "https://gridsystem.azurewebsites.net/login.html";
 }
