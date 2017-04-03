@@ -128,7 +128,9 @@ firebase.auth().onAuthStateChanged((user) => {
     document.getElementById("displayUsername2").innerHTML = username;
     
 	});
-  }else{
+  }else if (window.location == "https://gridsystem.azurewebsites.net/login.html") {
+  }
+  else{
       window.location = "https://gridsystem.azurewebsites.net/login.html";
   }
 
