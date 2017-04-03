@@ -122,13 +122,16 @@ firebase.auth().onAuthStateChanged((user) => {
  	// ...
     photoUrl = user.photoURL;
     console.log(photoUrl);
-    document.getElementById("profilePic").src= photoUrl;
     document.getElementById("displayUsername").innerHTML = username + "	&#x25BC;";
     document.getElementById("userEmail").innerHTML = useremail;
     document.getElementById("displayUsername2").innerHTML = username;
+    document.getElementById("profilePic").src= photoUrl;
     
 	});
-  }else if (window.location == "https://gridsystem.azurewebsites.net/login.html") {
+  }else if (window.location.href == "https://gridsystem.azurewebsites.net/login.html") {
+  }
+  else if (window.location.href == "https://localhost/login.html") {
+  }else if (window.location.href == "https://gridsystem.azurewebsites.net/login") {
   }
   else{
       window.location = "https://gridsystem.azurewebsites.net/login.html";
