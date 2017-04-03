@@ -129,7 +129,7 @@ firebase.auth().onAuthStateChanged((user) => {
     
 	});
   }else{
-      window.location("https://gridsystem.azurewebsites.net/login.html");
+      window.location = "https://gridsystem.azurewebsites.net/login.html";
   }
 
 });
