@@ -16,7 +16,7 @@ function signin() {
     var email = document.getElementById("signinEmail").value;
     var password = document.getElementById("signinPassword").value;
     firebase.auth().signInWithEmailAndPassword(email, password).then(function() {
-        window.location = "https://gridsystem.azurewebsites.net/";
+        goback();
     }).catch(function(error) {
         // Handle Errors here.
         var errorCode = error.code;
@@ -33,7 +33,7 @@ function signup(){
 	var username2 = document.getElementById("signupName").value;
 	firebase.auth().createUserWithEmailAndPassword(email2, password2).then(function(user){
 	console.log(user);
-    window.location = "https://gridsystem.azurewebsites.net/";
+    goback();
 	var userId = user.uid;
 	var username2 = document.getElementById("signupName").value;
 	firebase.database().ref('users/' + userId).set({
@@ -52,6 +52,24 @@ function signup(){
 function back(){
     window.location = "https://gridsystem.azurewebsites.net/";
 }
+function resetpassword(){
+    var auth = firebase.auth();
+    var emailAddress = document.getElementById("resetEmail").value;
+    auth.sendPasswordResetEmail(emailAddress).then(function() {
+    // Email sent.
+    }, function(error) {
+    // An error happened.
+    });
+}
+function deleteaccount(){
+    var user = firebase.auth().currentUser;
+    user.delete().then(function() {
+    goback();
+    }, function(error) {
+    console.log(error);
+    });
+}
+
 var provider = new firebase.auth.GoogleAuthProvider();
 
 function googleSignin() {
@@ -66,7 +84,7 @@ function googleSignin() {
         firebase.database().ref('users/' + userId).set({
         username: username3,
   	    });
-        window.location = "https://gridsystem.azurewebsites.net/";
+        goback();
 	    }).catch(function(error) {
         // ...
     }).catch(function(error) {
@@ -96,12 +114,19 @@ firebase.auth().onAuthStateChanged((user) => {
     x=1;
     console.log(user.uid);
 	var userId = user.uid;
+    var useremail = user.email;
 	console.log(user);
 	var userId = firebase.auth().currentUser.uid;
 	return firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
   	var username = snapshot.val().username;
  	// ...
+    photoUrl = user.photoURL;
+    console.log(photoUrl);
+    document.getElementById("profilePic").src= photoUrl;
     document.getElementById("displayUsername").innerHTML = username + "	&#x25BC;";
+    document.getElementById("userEmail").innerHTML = useremail;
+    document.getElementById("displayUsername2").innerHTML = username;
+    
 	});
   };
 });
@@ -115,3 +140,7 @@ function managePage() {
 };
 
 window.onresize = function(){ location.reload(); } //refreshes the page on resize
+
+function goback(){
+    window.location = "https://gridsystem.azurewebsites.net/";
+}

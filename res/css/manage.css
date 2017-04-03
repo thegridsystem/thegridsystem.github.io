@@ -1,0 +1,21 @@
+.account-form {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+html {
+    background: url(../img/background.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.logo {
+    margin: auto;
+}
+body{padding-top:30px;}
+
+.glyphicon {  margin-bottom: 10px;margin-right: 10px;}
