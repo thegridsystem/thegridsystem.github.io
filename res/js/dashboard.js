@@ -28,6 +28,14 @@ var energyGen = new Chart(ctx, {
         }
     }
 });
+setInterval(function() {
+    energyGen.data.datasets[0].data[0] = nuclear;
+    energyGen.data.datasets[0].data[1] = solar;
+    energyGen.data.datasets[0].data[2] = hydro;
+    energyGen.data.datasets[0].data[3] = pavegen;
+    energyGen.data.datasets[0].data[4] = other;
+    energyGen.update();
+}, 2000);
 
 var ctx = document.getElementById("energyGenLive");
 var energyGenLive = new Chart(ctx, {
