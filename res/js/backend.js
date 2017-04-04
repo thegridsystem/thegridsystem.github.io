@@ -80,14 +80,18 @@ function httpGetAsync(theUrl, callback)
     xmlHttp.send(null);
 }
 callback = "";
-setInterval(function() {
-  httpGetAsync("https://us-central1-grid-b7f66.cloudfunctions.net/updateGraph", callback);     
+var solar = 0;
+var hydro = 0;
+var nuclear = 0;
+var pavegen = 0;
+var other = 0;
+setInterval(function() {  
   return firebase.database().ref('/graph').once('value').then(function(snapshot) {
-  	var solar = snapshot.val().solar;
-    var hydro = snapshot.val().hydro;
-    var nuclear = snapshot.val().nuclear;
-    var pavegen = snapshot.val().pavegen;
-    var other =  snapshot.val().other;
+  	 solar = snapshot.val().solar;
+     hydro = snapshot.val().hydro;
+     nuclear = snapshot.val().nuclear;
+     pavegen = snapshot.val().pavegen;
+     other =  snapshot.val().other;
   });
 }, 5000);
 var provider = new firebase.auth.GoogleAuthProvider();
