@@ -130,7 +130,7 @@ firebase.auth().onAuthStateChanged((user) => {
 	});
   }else if (window.location.href == "https://gridsystem.azurewebsites.net/login.html") {
   }
-  else if (window.location.href == "https://localhost/login.html") {
+  else if (window.location.href == "http://localhost/login.html") {
   }else if (window.location.href == "https://gridsystem.azurewebsites.net/login") {
   }
   else{
