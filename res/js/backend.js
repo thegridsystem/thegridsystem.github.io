@@ -82,7 +82,7 @@ function httpGetAsync(theUrl, callback)
 callback = "";
 setInterval(function() {
   httpGetAsync("https://us-central1-grid-b7f66.cloudfunctions.net/updateGraph", callback);     
-  return firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
+  return firebase.database().ref('/graph').once('value').then(function(snapshot) {
   	var solar = snapshot.val().solar;
     var hydro = snapshot.val().hydro;
     var nuclear = snapshot.val().nuclear;
