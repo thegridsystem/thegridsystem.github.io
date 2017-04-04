@@ -5,7 +5,7 @@ var energyGen = new Chart(ctx, {
         labels: ["Nuclear", "Solar", "Hydro", "Pavegen", "Other"],
         datasets: [{
             label: '% Generation',
-            data: [40, 35, 10, 5, 10],
+            data: [nuclear, solar, hydro, pavegen, other],
             backgroundColor: [
                 'rgba(76, 175, 80, 1)',
                 'rgba(156, 39, 176, 1)',

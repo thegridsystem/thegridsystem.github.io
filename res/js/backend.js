@@ -69,7 +69,27 @@ function deleteaccount(){
     console.log(error);
     });
 }
-
+function httpGetAsync(theUrl, callback)
+{
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.onreadystatechange = function() { 
+        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+            callback(xmlHttp.responseText);
+    }
+    xmlHttp.open("GET", theUrl, true); // true for asynchronous 
+    xmlHttp.send(null);
+}
+callback = "";
+setInterval(function() {
+  httpGetAsync("https://us-central1-grid-b7f66.cloudfunctions.net/updateGraph", callback);     
+  return firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
+  	var solar = snapshot.val().solar;
+    var hydro = snapshot.val().hydro;
+    var nuclear = snapshot.val().nuclear;
+    var pavegen = snapshot.val().pavegen;
+    var other =  snapshot.val().other;
+  });
+}, 5000);
 var provider = new firebase.auth.GoogleAuthProvider();
 
 function googleSignin() {
