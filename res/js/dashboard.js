@@ -2,17 +2,16 @@ var ctx = document.getElementById("energyGen");
 var energyGen = new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+        labels: ["Nuclear", "Solar", "Hydro", "Pavegen", "Other"],
         datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
+            label: '% Generation',
+            data: [40, 35, 10, 5, 10],
             backgroundColor: [
                 'rgba(76, 175, 80, 1)',
                 'rgba(156, 39, 176, 1)',
                 'rgba(255, 235, 59, 1)',
                 'rgba(0, 150, 136, 1)',
                 'rgba(33, 150, 243, 1)',
-                'rgba(57, 73, 171, 1)'
             ]
         }]
     },
