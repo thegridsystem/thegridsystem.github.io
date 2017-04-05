@@ -85,3 +85,10 @@
             transform: scale3D(0, 0, 1);
   } 
 }
+
+.content {
+  min-height: calc(100vh - 70px);
+}
+footer {
+  height: 50px;
+}
