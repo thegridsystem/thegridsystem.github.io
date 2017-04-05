@@ -82,6 +82,20 @@ setInterval(function() {
 	capacity.innerHTML = Math.round(Math.random() * 100 + 50) +'%'; //Just testing, link this to day/night (higher in day due to solar) 
 }, 1000);
 
+var range = document.getElementById("time");
+noUiSlider.create(nonLinearSlider, {
+noUiSlider.create(nonLinearSlider, {
+	start: [ 12 ],
+	range: {
+		'min': [  0 ],
+		'max': [ 23 ]
+	}
+});
+});
+
+
+
+
 $('.grid').masonry({
     // set itemSelector so .grid-sizer is not used in layout
     itemSelector: '.grid-item',
