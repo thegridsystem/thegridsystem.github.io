@@ -3,9 +3,8 @@ var myVar;
 function timeout() {
     myVar = setTimeout(showPage, 3000);
 }
-
 function showPage() {
-  document.getElementById("loadcontainer").style.visibility = "hidden";
+  document.getElementById("loadcontainer").style.display = "none";
   document.getElementById("ropage").style.visibility = "visible";
   cube = document.getElementById("cube");
   cube.remove();
