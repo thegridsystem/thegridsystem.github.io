@@ -96,7 +96,7 @@ setInterval(function() {
 }, 1000);
 
 var range = document.getElementById("time");
-noUiSlider.create(nonLinearSlider, {
+noUiSlider.create(range, {
 	start: [ 12 ],
 	range: {
 		'min': [  0 ],
