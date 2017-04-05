@@ -27,8 +27,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<body>
-<div class="loadcontainer">
+<body onload="timeout()">
+<div id="loadcontainer">
   <div class="sk-cube-grid">
   <div class="sk-cube sk-cube1"></div>
   <div class="sk-cube sk-cube2"></div>
@@ -41,6 +41,7 @@
   <div class="sk-cube sk-cube9"></div>
 </div>
 </div>
+<div id="ropage" style="display:none;">
     <img class="banner" src="res/img/banner.png" alt="background">
     <div class="navbar navbar-default">
         <div class="container-fluid">
@@ -127,7 +128,7 @@
             </div>
         </div>
     </div>
-
+</div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/js/ripples.min.js"></script>

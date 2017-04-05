@@ -1,3 +1,14 @@
+var myVar;
+
+function timeout() {
+    myVar = setTimeout(showPage, 3000);
+}
+
+function showPage() {
+  document.getElementById("loadcontainer").style.display = "none";
+  document.getElementById("ropage").style.display = "block";
+}
+
 var ctx = document.getElementById("energyGen");
 var energyGen = new Chart(ctx, {
     type: 'pie',
