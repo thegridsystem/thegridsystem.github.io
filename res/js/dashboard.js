@@ -5,8 +5,8 @@ function timeout() {
 }
 
 function showPage() {
-  document.getElementById("loadcontainer").style.display = "none";
-  document.getElementById("ropage").style.display = "block";
+  document.getElementById("loadcontainer").style.visibility = "hidden";
+  document.getElementById("ropage").style.visibility = "visible";
 }
 
 var ctx = document.getElementById("energyGen");
