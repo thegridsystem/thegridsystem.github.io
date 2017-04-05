@@ -80,11 +80,11 @@ function httpGetAsync(theUrl, callback)
     xmlHttp.send(null);
 }
 callback = "";
-var solar = 0;
-var hydro = 0;
-var nuclear = 0;
-var pavegen = 0;
-var other = 0;
+var solar = 30;
+var hydro = 20;
+var nuclear = 35;
+var pavegen = 10;
+var other = 5;
 setInterval(function() {  
   return firebase.database().ref('/graph').once('value').then(function(snapshot) {
   	 solar = snapshot.val().solar;
