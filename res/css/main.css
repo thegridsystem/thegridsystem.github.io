@@ -92,3 +92,7 @@
             transform: scale3D(0, 0, 1);
   } 
 }
+
+#time {
+	max-width: 20%;
+}
