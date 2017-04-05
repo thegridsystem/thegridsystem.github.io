@@ -37,7 +37,7 @@ var energyGenLive = new Chart(ctx, {
                 'rgba(57, 73, 171, 1)'
             ],
             backgroundColor: [
-                'rgba(0, 0, 0, 0.0)'
+                'rgba(0, 0, 0, 0)'
             ]
         }]
     },
