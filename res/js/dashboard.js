@@ -95,23 +95,6 @@ setInterval(function() {
 	capacity.innerHTML = Math.round(Math.random() * 100 + 50) +'%'; //Just testing, link this to day/night (higher in day due to solar) 
 }, 1000);
 
-var time = document.getElementById("time");
-noUiSlider.create(time, {
-	start: [ 12 ],
-	range: {
-		'min': [  0 ],
-		'max': [ 23 ]
-	}
-});
-
-
-var timeValue = document.getElementById('time-value');
-
-// Show the value for the *last* moved handle.
-time.noUiSlider.on('update', function( values, handle ) {
-	timeValue.innerHTML = values[handle];
-});
-
 
 
 $('.grid').masonry({

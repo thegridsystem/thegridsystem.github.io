@@ -101,13 +101,3 @@
             transform: scale3D(0, 0, 1);
   } 
 }
-
-#time {
-	max-width: 20%;
-}
-body { 
-	padding-bottom: 70px; 
-}
-footer {
-	background-color: rgb(0, 150, 136);
-}
