@@ -36,6 +36,7 @@
   float: left;
   -webkit-animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
           animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out; 
+  padding: 5px;
 }
 .sk-cube-grid .sk-cube1 {
   -webkit-animation-delay: 0.2s;

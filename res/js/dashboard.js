@@ -97,13 +97,11 @@ setInterval(function() {
 
 var range = document.getElementById("time");
 noUiSlider.create(nonLinearSlider, {
-noUiSlider.create(nonLinearSlider, {
 	start: [ 12 ],
 	range: {
 		'min': [  0 ],
 		'max': [ 23 ]
 	}
-});
 });
 
 
