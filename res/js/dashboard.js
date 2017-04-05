@@ -7,8 +7,7 @@ function timeout() {
 function showPage() {
   document.getElementById("loadcontainer").style.visibility = "hidden";
   document.getElementById("ropage").style.visibility = "visible";
-  var loader = getElementById("sk-cube-grid");
-  loader.remove();
+  document.getElementById("sk-cube-grid").style.visibility = "hidden";
 }
 
 var ctx = document.getElementById("energyGen");
