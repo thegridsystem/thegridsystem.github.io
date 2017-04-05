@@ -14,23 +14,6 @@ var energyGen = new Chart(ctx, {
                 'rgba(33, 150, 243, 1)',
             ]
         }]
-    },
-    options: {
-        legend: {
-            display: false
-        },
-        scales: {
-            yAxes: [{
-				scaleLabel: {
-                    display: true,
-                    labelString: '% Production'
-                },
-                ticks: {
-                    min: 0,
-					max: 100
-                }
-            }]
-        }
     }
 });
 setInterval(function() {
