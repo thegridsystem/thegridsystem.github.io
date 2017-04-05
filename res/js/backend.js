@@ -176,3 +176,8 @@ window.onresize = function(){ location.reload(); } //refreshes the page on resiz
 function goback(){
     window.location = "https://gridsystem.azurewebsites.net/";
 }
+
+//Initialize material animations
+$(function() {
+    $.material.init();
+});

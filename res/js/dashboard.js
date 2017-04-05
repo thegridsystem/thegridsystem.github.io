@@ -21,8 +21,13 @@ var energyGen = new Chart(ctx, {
         },
         scales: {
             yAxes: [{
+				scaleLabel: {
+                    display: true,
+                    labelString: '% Production'
+                },
                 ticks: {
-                    beginAtZero: true
+                    min: 0,
+					max: 100
                 }
             }]
         }
@@ -88,6 +93,12 @@ setInterval(function() {
     energyGenLive.update();
 }, 60000);
 
+
+setInterval(function() {
+	var capacity = document.getElementById("capacity");
+	capacity.innerHTML = Math.random() * 100 + 50; //Just testing, link this to day/night (higher in day due to solar) 
+}, 1000);
+
 $('.grid').masonry({
     // set itemSelector so .grid-sizer is not used in layout
     itemSelector: '.grid-item',
@@ -95,7 +106,3 @@ $('.grid').masonry({
     columnWidth: '.grid-sizer',
     percentPosition: true
 })
-
-$(function() {
-    $.material.init();
-});
