@@ -96,7 +96,7 @@ setInterval(function() {
 
 setInterval(function() {
 	var capacity = document.getElementById("capacity");
-	capacity.innerHTML = toString(Math.random() * 100 + 50;) //Just testing, link this to day/night (higher in day due to solar) 
+	capacity.innerHTML = toString(Math.random() * 100 + 50); //Just testing, link this to day/night (higher in day due to solar) 
 }, 1000);
 
 $('.grid').masonry({
