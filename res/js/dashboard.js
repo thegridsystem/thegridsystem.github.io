@@ -1,6 +1,6 @@
 var ctx = document.getElementById("energyGen");
 var energyGen = new Chart(ctx, {
-    type: 'bar',
+    type: 'pie',
     data: {
         labels: ["Nuclear", "Solar", "Hydro", "Pavegen", "Other"],
         datasets: [{
