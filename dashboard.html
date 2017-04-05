@@ -27,8 +27,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<body>
-	<div class="content">
+<body onload="timeout()">
+<div id="loadcontainer">
+  <div id="cube" class="sk-cube-grid">
+  <div class="sk-cube sk-cube1"></div>
+  <div class="sk-cube sk-cube2"></div>
+  <div class="sk-cube sk-cube3"></div>
+  <div class="sk-cube sk-cube4"></div>
+  <div class="sk-cube sk-cube5"></div>
+  <div class="sk-cube sk-cube6"></div>
+  <div class="sk-cube sk-cube7"></div>
+  <div class="sk-cube sk-cube8"></div>
+  <div class="sk-cube sk-cube9"></div>
+</div>
+</div>
+<div id="ropage" style="visibility:hidden">
     <img class="banner" src="res/img/banner.png" alt="background">
     <div class="navbar navbar-default">
         <div class="container-fluid">
@@ -115,12 +128,7 @@
             </div>
         </div>
     </div>
-	</div>
-	
-	<footer class="footer">
-		<div id="time"></div>
-	</footer>
-
+</div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/js/ripples.min.js"></script>
@@ -128,7 +136,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.1.1/masonry.pkgd.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/9.2.0/nouislider.min.js"></script>
     <script src="res/js/backend.js"></script>
     <script src="res/js/dashboard.js"></script>
 

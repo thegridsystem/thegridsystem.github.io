@@ -1,3 +1,15 @@
+var myVar;
+
+function timeout() {
+    myVar = setTimeout(showPage, 3000);
+}
+
+function showPage() {
+  document.getElementById("loadcontainer").style.visibility = "hidden";
+  document.getElementById("ropage").style.visibility = "visible";
+  document.getElementById("cube").style.visibility = "hidden";
+}
+
 var ctx = document.getElementById("energyGen");
 var energyGen = new Chart(ctx, {
     type: 'pie',
