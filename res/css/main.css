@@ -96,4 +96,9 @@
 #time {
 	max-width: 20%;
 }
-body { padding-bottom: 70px; }
+body { 
+	padding-bottom: 70px; 
+}
+footer {
+	background-color: rgba(57, 73, 171, 1);
+}
