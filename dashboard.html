@@ -27,7 +27,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<body>
+<body onload="timeout()">
+<div id="loadcontainer">
+  <div id="cube" class="sk-cube-grid">
+  <div class="sk-cube sk-cube1"></div>
+  <div class="sk-cube sk-cube2"></div>
+  <div class="sk-cube sk-cube3"></div>
+  <div class="sk-cube sk-cube4"></div>
+  <div class="sk-cube sk-cube5"></div>
+  <div class="sk-cube sk-cube6"></div>
+  <div class="sk-cube sk-cube7"></div>
+  <div class="sk-cube sk-cube8"></div>
+  <div class="sk-cube sk-cube9"></div>
+</div>
+</div>
+<div id="ropage" style="visibility: hidden;">
     <img class="banner" src="res/img/banner.png" alt="background">
     <div class="navbar navbar-default">
         <div class="container-fluid">
@@ -37,12 +51,12 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                   </button>
-                <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-th" aria-hidden="true"></span></a>
+                <a class="navbar-brand" href="/dashboard.html"><span class="glyphicon glyphicon-th" aria-hidden="true"></span></a>
             </div>
             <div class="navbar-collapse collapse navbar-responsive-collapse">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#">Overview <span class="glyphicon glyphicon-picture" aria-hidden="true"></span></a></li>
-                    <li><a href="#">Report <span class="glyphicon glyphicon-stats" aria-hidden="true"></span></a></li>
+                    <li><a href="/map.html">City Map <span class="glyphicon glyphicon-tree-conifer" aria-hidden="true"></span></a></li>
                 </ul>
                 <form class="navbar-form navbar-left">
                     <div class="form-group is-empty">
@@ -54,7 +68,7 @@
                         <a href="#" data-target="#" class="dropdown-toggle" data-toggle="dropdown" id="displayUsername">Guest
                         <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Calendar</a></li>
+                            <li><a href="#">Bills</a></li>
                             <li><a href="javascript:managePage();">Manage</a></li>
                             <li class="divider"></li>
                             <li><a href="javascript:logOut();">Log Out</a></li>
@@ -69,10 +83,10 @@
         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Energy Generation</h3>
+                    <h3 class="panel-title">Real-Time Energy Generation</h3>
                 </div>
                 <div class="panel-body">
-                    <canvas id="energyGen" width="100%" height="100%"></canvas> Electrical Energy is generated via green sources all throughout the city
+                    <canvas id="energyGen" width="100%" height="100%"></canvas> Electrical Energy is generated via green sources all throughout the city. This graph is updated in real time.
                 </div>
             </div>
         </div>
@@ -89,7 +103,7 @@
         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Live Energy Generation</h3>
+                    <h3 class="panel-title">Live Gigawatt Output</h3>
                 </div>
                 <div class="panel-body">
                     <canvas id="energyGenLive" width="100%" height="100%"></canvas> Electrical Energy is generated via green sources all throughout the city
@@ -98,8 +112,11 @@
         </div>
         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
             <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Energy Capacity</h3>
+                </div>
                 <div class="panel-body">
-                    Basic panel example
+                    <h1 id="capacity">Updating...</h1>The Grid automatically configures power stations to output the needed capacity; in times of high load the city may tap into the national supply via an AC-DC converter. The Grid may also supply electrical energy to areas outside of the city in times of low demand.
                 </div>
             </div>
         </div>
@@ -110,17 +127,19 @@
                 </div>
             </div>
         </div>
-    </div>
-
+	</div>
+	
+</div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/js/ripples.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/js/material.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.1.1/masonry.pkgd.min.js"></script>
-    <script src="res/js/dashboard.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/9.2.0/nouislider.min.js"></script>
     <script src="res/js/backend.js"></script>
+    <script src="res/js/dashboard.js"></script>
 
 </body>
 

@@ -1,34 +1,41 @@
+var myVar;
+
+function timeout() {
+    myVar = setTimeout(showPage, 3000);
+}
+function showPage() {
+  document.getElementById("loadcontainer").style.display = "none";
+  document.getElementById("ropage").style.visibility = "visible";
+  cube = document.getElementById("cube");
+  cube.remove();
+}
+
 var ctx = document.getElementById("energyGen");
 var energyGen = new Chart(ctx, {
-    type: 'bar',
+    type: 'pie',
     data: {
-        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+        labels: ["Nuclear", "Solar", "Hydro", "Pavegen", "Other"],
         datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
+            label: '% Generation',
+            data: [nuclear, solar, hydro, pavegen, other],
             backgroundColor: [
                 'rgba(76, 175, 80, 1)',
                 'rgba(156, 39, 176, 1)',
                 'rgba(255, 235, 59, 1)',
                 'rgba(0, 150, 136, 1)',
                 'rgba(33, 150, 243, 1)',
-                'rgba(57, 73, 171, 1)'
             ]
         }]
-    },
-    options: {
-        legend: {
-            display: false
-        },
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero: true
-                }
-            }]
-        }
     }
 });
+setInterval(function() {
+    energyGen.data.datasets[0].data[0] = nuclear;
+    energyGen.data.datasets[0].data[1] = solar;
+    energyGen.data.datasets[0].data[2] = hydro;
+    energyGen.data.datasets[0].data[3] = pavegen;
+    energyGen.data.datasets[0].data[4] = other;
+    energyGen.update();
+}, 2000);
 
 var ctx = document.getElementById("energyGenLive");
 var energyGenLive = new Chart(ctx, {
@@ -42,7 +49,7 @@ var energyGenLive = new Chart(ctx, {
                 'rgba(57, 73, 171, 1)'
             ],
             backgroundColor: [
-                'rgba(0, 0, 0, 0.0)'
+                'rgba(0, 0, 0, 0)'
             ]
         }]
     },
@@ -81,6 +88,14 @@ setInterval(function() {
     energyGenLive.update();
 }, 60000);
 
+
+setInterval(function() {
+	var capacity = document.getElementById("capacity");
+	capacity.innerHTML = Math.round(Math.random() * 100 + 50) +'%'; //Just testing, link this to day/night (higher in day due to solar) 
+}, 1000);
+
+
+
 $('.grid').masonry({
     // set itemSelector so .grid-sizer is not used in layout
     itemSelector: '.grid-item',
@@ -88,7 +103,3 @@ $('.grid').masonry({
     columnWidth: '.grid-sizer',
     percentPosition: true
 })
-
-$(function() {
-    $.material.init();
-});

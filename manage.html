@@ -20,9 +20,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/css/bootstrap-material-design.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/css/ripples.min.css">
 
-
-
     <link href="res/css/main.css" rel="stylesheet">
+    <link href="res/css/manage.css" rel="stylesheet">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -41,8 +40,8 @@
             </div>
             <div class="navbar-collapse collapse navbar-responsive-collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Overview <span class="glyphicon glyphicon-picture" aria-hidden="true"></span></a></li>
-                    <li><a href="#">Report <span class="glyphicon glyphicon-stats" aria-hidden="true"></span></a></li>
+                    <li><a href="/dashboard.html">Overview <span class="glyphicon glyphicon-picture" aria-hidden="true"></span></a></li>
+                    <li><a href="/map.html">Map <span class="glyphicon glyphicon-tree-conifer" aria-hidden="true"></span></a></li>
                 </ul>
                 <form class="navbar-form navbar-left">
                     <div class="form-group is-empty">
@@ -64,6 +63,110 @@
             </div>
         </div>
     </div>
+    <div class="col-md-4 account-form">
+        <div class="bs-component">
+            <div class="tab-content">
+                <div class="tab-pane fade active in" id="login">
+                    <div class="well bs-component">
+                        <fieldset>
+                            <legend>Account Management</legend>
+                            <div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div>
+                <div class="row">
+                    <div class="col-sm-6 col-md-4">
+                        <img id="profilePic" onerror="this.src='res/img/profile.png'" alt="" class="img-rounded img-responsive" />
+                    </div>
+                    <div class="col-sm-6 col-md-8">
+                        <h4 id="displayUsername2">
+                            </h4>
+                        <p>
+                            <div id="userEmail"></div>
+                            <br></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+                            <div class="form-group is-empty">
+                                <button type="button" class="btn btn-default col" data-target="#pwdModal" data-toggle="modal">Reset Password</button>
+                                <button type="button" class="btn btn-danger" data-target="#delModal" data-toggle="modal">Delete Account</button>
+                        </fieldset>
+                        <div id="source-button" class="btn btn-primary btn-xs" style="display: none;">&lt; &gt;</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="pwdModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+  <div class="modal-content">
+      <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+          <h1 class="text-center">Reset password</h1>
+      </div>
+      <div class="modal-body">
+          <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="text-center">
+                          
+                          <p>If you have forgotten your password you can reset it here.</p>
+                            <div class="panel-body">
+                                <fieldset>
+                                    <div class="form-group">
+                                        <input class="form-control input-lg" placeholder="E-mail" name="email" type="email" id="resetEmail">
+                                    </div>
+                                    <input class="btn btn-lg btn-primary btn-block" value="Sumbit" type="submit" onclick="resetpassword();">
+                                </fieldset>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+      </div>
+      <div class="modal-footer">
+          <div class="col-md-12">
+          <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+		  </div>	
+      </div>
+  </div>
+  </div>
+</div>
+<div id="delModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+  <div class="modal-content">
+      <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+          <h1 class="text-center">Delete Account</h1>
+      </div>
+      <div class="modal-body">
+          <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="text-center">
+                          
+                          <p>Are you sure you want to delete your account?</p>
+                            <div class="panel-body">
+                                <fieldset>
+                                    <input class="btn btn-lg btn-primary btn-danger" value="Delete Account" type="submit" onclick="deleteaccount();">
+                                </fieldset>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+      </div>
+      <div class="modal-footer">
+          <div class="col-md-12">
+          <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+		  </div>	
+      </div>
+  </div>
+  </div>
+</div>
 
     
 

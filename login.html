@@ -8,7 +8,7 @@
 
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-
+    <link rel="stylesheet" href="res/css/bootstrap-social.css">
 
     <!-- Material Design fonts -->
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
@@ -54,9 +54,14 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <div class="col-md-10 col-md-offset-2">
-                                    <button type="button" class="btn btn-default">Cancel</button>
-                                    <button type="submit" class="btn btn-primary" onClick="signin()">Submit<div class="ripple-container"></div></button>
+                                <div class="row" style="width:100%;">
+                                    <button type="button" class="btn btn-default col" onclick="back()">Cancel</button>
+                                    <button type="submit" class="btn btn-primary col" onClick="signin()">Submit<div class="ripple-container"></div></button>
+                                      <a style="float:right;" class="btn btn-social-icon btn-google col" href="javascript:googleSignin();">
+                                        <span style="float:right;"class="fa fa-google"></span></a>
+                                </div>
+                                <div class="alert alert-danger errorlogin" id="errorlogin">
+                                <p class="errorstuff" id="errormessage"></p>
                                 </div>
                             </div>
                         </fieldset>
@@ -89,9 +94,13 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <div class="col-md-10 col-md-offset-2">
-                                    <button type="button" class="btn btn-default">Cancel</button>
-                                    <button type="submit" class="btn btn-primary" onClick="signup()">Submit<div class="ripple-container"></div></button>
+                                <div class="row">
+                                    <button type="button" class="col btn btn-default" onclick="back()">Cancel</button>
+                                    <button type="submit" class="col btn btn-primary" onClick="signup()">Submit<div class="ripple-container"></div></button>
+                                    </div>
+                                    <div class="alert alert-danger errorlogin" id="errorlogin2">
+                                    <p class="errorstuff" id="errormessage2"></p>
+                                    
                                 </div>
                             </div>
                         </fieldset>
@@ -110,6 +119,7 @@
     <script src="res/js/login.js"></script>
     <script src="res/js/firebase.js"></script>
     <script src="res/js/backend.js"></script>
+    <script src="https://use.fontawesome.com/cd351f2c38.js"></script>
 </body>
 
 </html>
