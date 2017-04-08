@@ -171,8 +171,16 @@ function managePage() {
 	}
 };
 
+
 window.onresize = function(){ location.reload(); } //refreshes the page on resize
 
+if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+	console.log("On a mobile device.");
+} else {
+	window.onresize = function(){ location.reload(); } //refreshes the page on resize
+}
+	
+}
 function goback(){
     window.location = "https://gridsystem.azurewebsites.net/";
 }
