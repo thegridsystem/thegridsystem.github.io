@@ -64,8 +64,8 @@ var energyGenLive = new Chart(ctx, {
                     labelString: 'Gigawatt output'
                 },
                 ticks: {
-                    min: 19000,
-                    max: 20000
+                    min: 18900,
+                    max: 19200
                 }
             }],
             xAxes: [{
