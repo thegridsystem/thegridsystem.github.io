@@ -43,8 +43,8 @@ var energyGenLive = new Chart(ctx, {
     data: {
         labels: ["-5", "-4", "-3", "-2", "-1", "Now"],
         datasets: [{
-            label: 'Gigawatt generation',
-            data: [Math.random() + 10.5, Math.random() + 10.5, Math.random() + 10.5, Math.random() + 10.5, Math.random() + 10.5, Math.random() + 10.5],
+            label: 'Kilowatt Hour generation',
+            data: [Math.random()*100 + 19000, Math.random()*100 + 19000, Math.random()*100 + 19000, Math.random()*100 + 19000, Math.random()*100 + 19000, Math.random()*100 + 19000],
             borderColor: [
                 'rgba(57, 73, 171, 1)'
             ],
@@ -84,16 +84,9 @@ setInterval(function() {
     energyGenLive.data.datasets[0].data[2] = energyGenLive.data.datasets[0].data[3];
     energyGenLive.data.datasets[0].data[3] = energyGenLive.data.datasets[0].data[4];
     energyGenLive.data.datasets[0].data[4] = energyGenLive.data.datasets[0].data[5];
-    energyGenLive.data.datasets[0].data[5] = Math.random() + 10.5;
+    energyGenLive.data.datasets[0].data[5] = Math.random()*100 + 19000;
     energyGenLive.update();
 }, 60000);
-
-
-setInterval(function() {
-	var capacity = document.getElementById("capacity");
-	capacity.innerHTML = Math.round(Math.random() * 100 + 50) +'%'; //Just testing, link this to day/night (higher in day due to solar) 
-}, 1000);
-
 
 
 $('.grid').masonry({
