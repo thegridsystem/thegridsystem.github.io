@@ -14,7 +14,7 @@ var ctx = document.getElementById("energyGen");
 var energyGen = new Chart(ctx, {
     type: 'pie',
     data: {
-        labels: ["Nuclear", "Solar", "Hydro", "Pavegen", "Other"],
+        labels: ["Nuclear", "Solar", "Hydro", "Pavement Pressure Generation", "Other"],
         datasets: [{
             label: '% Generation',
             data: [nuclear, solar, hydro, pavegen, other],
@@ -61,7 +61,7 @@ var energyGenLive = new Chart(ctx, {
             yAxes: [{
                 scaleLabel: {
                     display: true,
-                    labelString: 'Gigawatt output'
+                    labelString: 'Gigawatt Hour output'
                 },
                 ticks: {
                     min: 18900,
